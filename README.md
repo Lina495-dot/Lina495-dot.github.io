@@ -82,3 +82,15 @@ Das Logo wird jetzt als originale PNG-Datei eingebunden:
 
 Die vorherige automatisch vektorisierte SVG-Version wird nicht mehr verwendet.
 Eine neue Service-Worker-Cache-Version verhindert, dass weiterhin das alte Logo erscheint.
+
+
+## Designanpassung an das neue Logo
+
+Die komplette Website wurde an die neue Markenwelt angepasst:
+
+- Hauptfarbe: Schwarz `#050505`
+- Akzentfarbe: Gold `#B0874F`
+- Helle Flächen: Weiß und Creme
+- Header, Hero, Self Check-In, digitale Gästekarte, Wetter, Kontakt und Footer wurden neu abgestimmt.
+- Karten, Buttons, Icons, Hover-Zustände und Fokusrahmen nutzen jetzt ein einheitliches Schwarz-Gold-System.
+- PWA-App-Icons und Browser-Theme wurden ebenfalls angepasst.

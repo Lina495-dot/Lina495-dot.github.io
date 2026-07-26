@@ -1992,3 +1992,231 @@ button,.btn,.quick,.contact-card,.place-link,summary{
   .assistant-actions{flex-direction:column-reverse}
   .assistant-actions .btn{width:100%}
 }
+
+
+/* =========================================================
+   ME LIVING – Rebranding passend zum neuen Logo
+   Palette: Schwarz · Gold · Weiß · Creme
+   ========================================================= */
+:root{
+  --green:#050505;
+  --green2:#121212;
+  --forest:#050505;
+  --forest-2:#1B1B1B;
+  --gold:#B0874F;
+  --sand:#EEE8DD;
+  --cream:#F7F3EC;
+  --paper:#FFFFFF;
+  --ink:#202020;
+  --muted:#6E6E6E;
+  --line:rgba(5,5,5,.12);
+  --shadow:0 22px 58px rgba(0,0,0,.14);
+}
+
+body{
+  background:var(--cream) !important;
+  color:var(--ink) !important;
+}
+
+.topbar{
+  background:rgba(5,5,5,.88) !important;
+  border-bottom:1px solid rgba(212,168,95,.18) !important;
+  box-shadow:0 12px 34px rgba(0,0,0,.24) !important;
+}
+
+.brand-subtitle,
+.eyebrow{
+  color:var(--gold) !important;
+}
+
+.navlinks a{
+  color:rgba(255,255,255,.82) !important;
+}
+.navlinks a:hover{
+  color:#fff !important;
+}
+.navlinks a::after{
+  background:var(--gold) !important;
+}
+
+.lang a.active{
+  background:var(--gold) !important;
+  color:#050505 !important;
+}
+
+.hero{
+  background:
+    radial-gradient(circle at 82% 18%,rgba(212,168,95,.24),transparent 24%),
+    linear-gradient(135deg,#050505,#1B1B1B) !important;
+}
+
+.hero::before{
+  background:
+    linear-gradient(transparent 62%,rgba(0,0,0,.55)),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.015) 0 1px,transparent 1px 92px) !important;
+}
+
+.kicker{
+  background:rgba(255,255,255,.06) !important;
+  border-color:rgba(212,168,95,.3) !important;
+}
+
+.btn-primary{
+  background:var(--gold) !important;
+  color:#050505 !important;
+  box-shadow:0 12px 28px rgba(212,168,95,.18) !important;
+}
+.btn-primary:hover{
+  filter:brightness(1.04);
+}
+.btn-dark{
+  background:#050505 !important;
+  color:#fff !important;
+  border:1px solid rgba(212,168,95,.2) !important;
+}
+
+.quick,
+.card,
+details,
+.live-panel,
+.feature-panel,
+.location-card,
+.recommendation-card,
+.assistant-card,
+.install-card{
+  background:linear-gradient(180deg,#fff,#FCFAF6) !important;
+  border-color:rgba(5,5,5,.1) !important;
+  box-shadow:0 14px 36px rgba(0,0,0,.07) !important;
+}
+
+.quick:hover,
+.card:hover,
+details:hover,
+.recommendation-card:hover{
+  border-color:rgba(212,168,95,.34) !important;
+  box-shadow:0 20px 46px rgba(0,0,0,.11) !important;
+}
+
+.quick.self-checkin,
+#service .showcase,
+.digital-card,
+.assistant-summary,
+.recommendation-highlight,
+.weather-card{
+  background:
+    radial-gradient(circle at 87% 15%,rgba(212,168,95,.22),transparent 24%),
+    linear-gradient(140deg,#050505,#1B1B1B) !important;
+  box-shadow:0 24px 58px rgba(0,0,0,.22) !important;
+}
+
+.quick.self-checkin .lucide,
+summary .lucide,
+.card .icon .lucide,
+.recommendation-card .place-icon,
+.contact-card .lucide{
+  color:var(--gold) !important;
+}
+
+.card .icon,
+summary::after,
+.recommendation-card .place-icon{
+  background:rgba(212,168,95,.14) !important;
+  border-color:rgba(212,168,95,.2) !important;
+}
+
+h1,h2,h3,h4,
+.quick strong,
+.card h3,
+.mapcard h3,
+.location-card h3,
+.feature-panel h3,
+.event-content h4,
+.recommendation-card h3{
+  color:#111 !important;
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.quick.self-checkin strong,
+#service .showcase h2,
+.digital-card strong,
+.assistant-summary h3,
+.recommendation-highlight h3,
+.weather-card,
+.contact h2,
+.contact h3{
+  color:#fff !important;
+}
+
+.soft,
+#umgebung,
+.arrival-assistant{
+  background:#EEE8DD !important;
+}
+
+.contact,
+footer{
+  background:#050505 !important;
+}
+.contact-card{
+  background:rgba(255,255,255,.055) !important;
+  border-color:rgba(212,168,95,.18) !important;
+}
+
+.waste-yellow .waste-dot{background:#D8B11E !important}
+.waste-blue .waste-dot{background:#4A77B5 !important}
+.waste-bio .waste-dot{background:#789446 !important}
+.waste-rest .waste-dot{background:#222 !important}
+
+.map-filter.active{
+  background:#050505 !important;
+  color:#fff !important;
+}
+.map-filter{
+  border-color:rgba(5,5,5,.12) !important;
+}
+
+.event-date,
+.recommendation-card .place-tag{
+  background:rgba(212,168,95,.16) !important;
+  color:#111 !important;
+}
+
+.digital-card-chip{
+  background:linear-gradient(135deg,#B0874F,#A87A35) !important;
+}
+
+.mini-btn{
+  border-color:rgba(212,168,95,.24) !important;
+}
+.mini-btn:hover{
+  background:rgba(212,168,95,.16) !important;
+}
+
+.assistant-number,
+#service .tile strong::before{
+  background:#050505 !important;
+  color:#fff !important;
+  border:1px solid rgba(212,168,95,.22) !important;
+}
+
+.progress-dot.active{
+  background:var(--gold) !important;
+}
+
+.floating{
+  background:var(--gold) !important;
+  color:#050505 !important;
+  box-shadow:0 16px 36px rgba(0,0,0,.28) !important;
+}
+
+:focus-visible{
+  outline:3px solid var(--gold) !important;
+  outline-offset:4px !important;
+}
+
+::selection{
+  background:rgba(212,168,95,.28);
+  color:#050505;
+}

@@ -94,3 +94,31 @@ a{min-height:44px}
     animation-duration:.01ms !important;
   }
 }
+
+/* ME LIVING Logo-Rebranding */
+:root{
+  --green:#050505;
+  --gold:#B0874F;
+  --cream:#F7F3EC;
+}
+body{
+  background:
+    radial-gradient(circle at 82% 18%,rgba(212,168,95,.23),transparent 25%),
+    linear-gradient(135deg,#050505,#1A1A1A) !important;
+}
+header{
+  background:
+    radial-gradient(circle at 80% 20%,rgba(212,168,95,.22),transparent 26%),
+    linear-gradient(135deg,#050505,#1A1A1A) !important;
+}
+.card{
+  background:linear-gradient(140deg,#050505,#1B1B1B) !important;
+}
+.card span,
+.links a{
+  background:#B0874F !important;
+  color:#050505 !important;
+}
+.card.disabled{
+  background:linear-gradient(140deg,#3A3A3A,#242424) !important;
+}

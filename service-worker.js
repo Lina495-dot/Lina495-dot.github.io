@@ -1,5 +1,5 @@
 
-const CACHE="me-living-v3-logo-final-v4";
+const CACHE="me-living-v3-brand-redesign-v1";
 const CORE=[
   "/", "/index.html", "/offline.html", "/manifest.webmanifest",
   "/de/villa-am-kurpark.html","/en/villa-am-kurpark.html","/nl/villa-am-kurpark.html",
