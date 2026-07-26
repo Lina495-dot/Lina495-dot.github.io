@@ -42,6 +42,7 @@
         <a href="#infos">Informatie</a>
         <a href="#anleitungen">Handleidingen</a>
         <a href="#service">Self Check-In</a>
+        <a href="#aktuell">Actueel</a>
         <a href="#umgebung">Omgeving</a>
         <a href="#kontakt">Contact</a>
       </nav>
@@ -315,6 +316,57 @@ Tik eerst op het <strong>touchpad boven de deurklink</strong>, om het te activer
       </div>
     </section>
 
+    
+    <section class="live-section" id="aktuell">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Actueel ter plaatse</div>
+          <h2>Weer en evenementen</h2>
+          <p class="lead">Actueel weer voor Bad Salzuflen en geselecteerde evenementen in één oogopslag.</p>
+        </div>
+
+        <div class="live-grid">
+          <article class="live-panel" data-weather>
+            <div class="live-panel-head">
+              <div class="eyebrow">Live weer</div>
+              <h3>Bad Salzuflen</h3>
+            </div>
+            <div class="weather-card">
+              <div class="weather-now">
+                <div class="weather-symbol" data-weather-icon>🌦️</div>
+                <div>
+                  <div class="weather-temp" data-weather-temp>–°</div>
+                  <div class="weather-condition" data-weather-condition>–</div>
+                </div>
+              </div>
+              <div class="weather-details">
+                <div class="weather-detail"><small>Gevoelstemperatuur</small><strong data-weather-feels>–</strong></div>
+                <div class="weather-detail"><small>Wind</small><strong data-weather-wind>–</strong></div>
+                <div class="weather-detail"><small>Neerslag</small><strong data-weather-rain>–</strong></div>
+              </div>
+              <div class="weather-forecast" data-weather-forecast></div>
+            </div>
+            <p class="live-status" data-weather-status></p>
+            <p class="events-footer data-note">Weergegevens: Open-Meteo. De verwachting wordt bijgewerkt wanneer de pagina wordt geopend.</p>
+          </article>
+
+          <article class="live-panel" data-events>
+            <div class="live-panel-head">
+              <div class="eyebrow">Evenementen</div>
+              <h3>Geselecteerde komende hoogtepunten</h3>
+            </div>
+            <div class="events-list" data-events-list></div>
+            <p class="events-empty" data-events-empty></p>
+            <div class="events-footer">
+              <a class="btn btn-dark" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Volledige kalender openen</a>
+              <p class="data-note">Evenementgegevens: officiële kalender van Staatsbad Salzuflen. Hoogtepunten worden op datum gefilterd.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
     <section class="soft" id="umgebung">
       <div class="container">
         <div class="section-head">
@@ -456,5 +508,7 @@ Tik eerst op het <strong>touchpad boven de deurklink</strong>, om het te activer
 
   
 <script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/weather.js" defer></script>
+<script src="../assets/js/events.js" defer></script>
 </body>
 </html>

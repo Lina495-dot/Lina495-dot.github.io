@@ -42,6 +42,7 @@
         <a href="#infos">Infos</a>
         <a href="#anleitungen">Anleitungen</a>
         <a href="#service">Self Check-In</a>
+        <a href="#aktuell">Aktuell</a>
         <a href="#umgebung">Umgebung</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
@@ -315,6 +316,57 @@ Tippen Sie zunächst auf das <strong>Touchpad oberhalb des Türgriffs</strong>, 
       </div>
     </section>
 
+    
+    <section class="live-section" id="aktuell">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Aktuell vor Ort</div>
+          <h2>Wetter und Veranstaltungen</h2>
+          <p class="lead">Aktuelle Wetterdaten für Bad Salzuflen und ausgewählte Veranstaltungshighlights auf einen Blick.</p>
+        </div>
+
+        <div class="live-grid">
+          <article class="live-panel" data-weather>
+            <div class="live-panel-head">
+              <div class="eyebrow">Live-Wetter</div>
+              <h3>Bad Salzuflen</h3>
+            </div>
+            <div class="weather-card">
+              <div class="weather-now">
+                <div class="weather-symbol" data-weather-icon>🌦️</div>
+                <div>
+                  <div class="weather-temp" data-weather-temp>–°</div>
+                  <div class="weather-condition" data-weather-condition>–</div>
+                </div>
+              </div>
+              <div class="weather-details">
+                <div class="weather-detail"><small>Gefühlt</small><strong data-weather-feels>–</strong></div>
+                <div class="weather-detail"><small>Wind</small><strong data-weather-wind>–</strong></div>
+                <div class="weather-detail"><small>Niederschlag</small><strong data-weather-rain>–</strong></div>
+              </div>
+              <div class="weather-forecast" data-weather-forecast></div>
+            </div>
+            <p class="live-status" data-weather-status></p>
+            <p class="events-footer data-note">Wetterdaten: Open-Meteo. Die Vorhersage wird beim Öffnen der Seite aktualisiert.</p>
+          </article>
+
+          <article class="live-panel" data-events>
+            <div class="live-panel-head">
+              <div class="eyebrow">Veranstaltungen</div>
+              <h3>Ausgewählte kommende Highlights</h3>
+            </div>
+            <div class="events-list" data-events-list></div>
+            <p class="events-empty" data-events-empty></p>
+            <div class="events-footer">
+              <a class="btn btn-dark" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Vollständigen Kalender öffnen</a>
+              <p class="data-note">Veranstaltungsdaten: offizieller Veranstaltungskalender Staatsbad Salzuflen. Highlights werden nach Datum gefiltert.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
     <section class="soft" id="umgebung">
       <div class="container">
         <div class="section-head">
@@ -456,5 +508,7 @@ Tippen Sie zunächst auf das <strong>Touchpad oberhalb des Türgriffs</strong>, 
 
   
 <script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/weather.js" defer></script>
+<script src="../assets/js/events.js" defer></script>
 </body>
 </html>

@@ -42,6 +42,7 @@
         <a href="#infos">Information</a>
         <a href="#anleitungen">Instructions</a>
         <a href="#service">Self Check-In</a>
+        <a href="#aktuell">Live</a>
         <a href="#umgebung">Local area</a>
         <a href="#kontakt">Contact</a>
       </nav>
@@ -315,6 +316,57 @@ First tap the <strong>touchpad above the door handle</strong>, to activate it. T
       </div>
     </section>
 
+    
+    <section class="live-section" id="aktuell">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Currently in town</div>
+          <h2>Weather and events</h2>
+          <p class="lead">Current weather for Bad Salzuflen and selected event highlights at a glance.</p>
+        </div>
+
+        <div class="live-grid">
+          <article class="live-panel" data-weather>
+            <div class="live-panel-head">
+              <div class="eyebrow">Live weather</div>
+              <h3>Bad Salzuflen</h3>
+            </div>
+            <div class="weather-card">
+              <div class="weather-now">
+                <div class="weather-symbol" data-weather-icon>🌦️</div>
+                <div>
+                  <div class="weather-temp" data-weather-temp>–°</div>
+                  <div class="weather-condition" data-weather-condition>–</div>
+                </div>
+              </div>
+              <div class="weather-details">
+                <div class="weather-detail"><small>Feels like</small><strong data-weather-feels>–</strong></div>
+                <div class="weather-detail"><small>Wind</small><strong data-weather-wind>–</strong></div>
+                <div class="weather-detail"><small>Precipitation</small><strong data-weather-rain>–</strong></div>
+              </div>
+              <div class="weather-forecast" data-weather-forecast></div>
+            </div>
+            <p class="live-status" data-weather-status></p>
+            <p class="events-footer data-note">Weather data: Open-Meteo. The forecast updates whenever the page is opened.</p>
+          </article>
+
+          <article class="live-panel" data-events>
+            <div class="live-panel-head">
+              <div class="eyebrow">Events</div>
+              <h3>Selected upcoming highlights</h3>
+            </div>
+            <div class="events-list" data-events-list></div>
+            <p class="events-empty" data-events-empty></p>
+            <div class="events-footer">
+              <a class="btn btn-dark" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Open full calendar</a>
+              <p class="data-note">Event data: official Staatsbad Salzuflen calendar. Highlights are filtered by date.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
     <section class="soft" id="umgebung">
       <div class="container">
         <div class="section-head">
@@ -456,5 +508,7 @@ First tap the <strong>touchpad above the door handle</strong>, to activate it. T
 
   
 <script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/weather.js" defer></script>
+<script src="../assets/js/events.js" defer></script>
 </body>
 </html>

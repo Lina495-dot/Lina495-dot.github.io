@@ -1626,3 +1626,278 @@ button,.btn,.quick,.contact-card,.place-link,summary{
     animation-iteration-count:1 !important;
   }
 }
+
+
+/* ME LIVING – Live-Wetter und Veranstaltungen */
+.live-section{
+  background:var(--cream);
+}
+
+.live-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:22px;
+  align-items:start;
+}
+
+.live-panel{
+  border-radius:28px;
+  background:var(--paper);
+  border:1px solid rgba(24,53,47,.1);
+  box-shadow:0 16px 42px rgba(21,45,39,.07);
+  overflow:hidden;
+}
+
+.live-panel-head{
+  padding:28px 28px 20px;
+}
+
+.live-panel-head .eyebrow{
+  margin-bottom:6px;
+}
+
+.live-panel-head h3{
+  color:var(--green);
+  font-size:1.5rem;
+  line-height:1.25;
+}
+
+.weather-card{
+  margin:0 28px 28px;
+  padding:26px;
+  border-radius:24px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 88% 15%,rgba(198,164,106,.25),transparent 25%),
+    linear-gradient(138deg,#18352f,#28554a);
+}
+
+.weather-now{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:center;
+  gap:20px;
+}
+
+.weather-symbol{
+  width:76px;
+  height:76px;
+  border-radius:22px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.12);
+  font-size:2.25rem;
+}
+
+.weather-temp{
+  font-size:clamp(2.5rem,5vw,4rem);
+  line-height:1;
+  font-weight:850;
+  letter-spacing:-.05em;
+}
+
+.weather-condition{
+  color:rgba(255,255,255,.82);
+  margin-top:6px;
+}
+
+.weather-details{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin-top:22px;
+}
+
+.weather-detail{
+  padding:12px;
+  border-radius:14px;
+  background:rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.09);
+}
+
+.weather-detail small{
+  display:block;
+  color:rgba(255,255,255,.62);
+  margin-bottom:2px;
+}
+
+.weather-detail strong{
+  color:#fff;
+}
+
+.weather-forecast{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-top:18px;
+}
+
+.forecast-day{
+  text-align:center;
+  padding:12px 8px;
+  border-radius:14px;
+  background:rgba(255,255,255,.07);
+}
+
+.forecast-day small{
+  display:block;
+  color:rgba(255,255,255,.68);
+}
+
+.forecast-icon{
+  display:block;
+  margin:5px 0;
+  font-size:1.35rem;
+}
+
+.forecast-day strong{
+  font-size:.9rem;
+}
+
+.live-status,
+.events-empty{
+  padding:0 28px 28px;
+  color:var(--muted);
+}
+
+.events-list{
+  display:grid;
+  gap:12px;
+  padding:0 28px 22px;
+}
+
+.event-card{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  gap:16px;
+  padding:17px;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid rgba(24,53,47,.09);
+}
+
+.event-date{
+  min-height:66px;
+  border-radius:15px;
+  display:grid;
+  place-items:center;
+  align-content:center;
+  background:rgba(198,164,106,.17);
+  color:var(--green);
+  text-align:center;
+}
+
+.event-date strong{
+  font-size:1.35rem;
+  line-height:1;
+}
+
+.event-date small{
+  margin-top:4px;
+  font-size:.72rem;
+  text-transform:uppercase;
+  font-weight:850;
+}
+
+.event-content h4{
+  color:var(--green);
+  font-size:1.04rem;
+  line-height:1.35;
+  margin-bottom:5px;
+}
+
+.event-content p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.55;
+}
+
+.event-link{
+  display:inline-flex;
+  margin-top:8px;
+  color:var(--green);
+  font-size:.86rem;
+  font-weight:850;
+  text-decoration:none;
+}
+
+.event-link::after{
+  content:" →";
+  color:var(--gold);
+}
+
+.events-footer{
+  padding:0 28px 28px;
+}
+
+.data-note{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:.78rem;
+  line-height:1.5;
+}
+
+@media(max-width:900px){
+  .live-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:620px){
+  .live-panel{
+    border-radius:23px;
+  }
+
+  .live-panel-head{
+    padding:23px 21px 17px;
+  }
+
+  .weather-card{
+    margin:0 14px 14px;
+    padding:21px;
+    border-radius:20px;
+  }
+
+  .weather-now{
+    grid-template-columns:62px 1fr;
+    gap:14px;
+  }
+
+  .weather-symbol{
+    width:62px;
+    height:62px;
+    border-radius:18px;
+    font-size:1.85rem;
+  }
+
+  .weather-details{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .weather-detail:last-child{
+    grid-column:1 / -1;
+  }
+
+  .weather-forecast{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .events-list{
+    padding:0 14px 14px;
+  }
+
+  .event-card{
+    grid-template-columns:60px 1fr;
+    gap:12px;
+    padding:14px;
+  }
+
+  .event-date{
+    min-height:60px;
+  }
+
+  .events-footer{
+    padding:0 14px 20px;
+  }
+}

@@ -32,3 +32,12 @@
 7. `Push origin`
 
 Wichtig: Nicht nur einzelne HTML-Dateien kopieren. Die CSS-, JS- und Logo-Ordner werden für die Darstellung benötigt.
+
+
+## Live-Wetter und Veranstaltungen
+
+- `assets/js/weather.js` lädt aktuelle Wetterdaten für Bad Salzuflen über Open-Meteo.
+- `assets/js/events.js` zeigt ausgewählte offizielle Veranstaltungshighlights und blendet vergangene Termine automatisch aus.
+- Der Button unter den Veranstaltungen führt zum vollständigen offiziellen Veranstaltungskalender.
+- Für das Live-Wetter benötigt der Gast eine Internetverbindung.
+- Veranstaltungshighlights sollten regelmäßig ergänzt werden; der offizielle Kalenderlink bleibt immer aktuell.
