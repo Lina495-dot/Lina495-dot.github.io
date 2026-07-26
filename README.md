@@ -48,3 +48,28 @@ Wichtig: Nicht nur einzelne HTML-Dateien kopieren. Die CSS-, JS- und Logo-Ordner
 - Ein zusätzlicher Schnellzugriff führt zum Bereich.
 - Veranstaltungskarten sind als statische Absicherung bereits im HTML sichtbar.
 - Versionsparameter verhindern, dass Browser alte CSS- oder JavaScript-Dateien aus dem Cache laden.
+
+
+## Guest Guide 3.0
+
+Neu hinzugefügt:
+- interaktive OpenStreetMap-Karte mit Kategorien und Google-Maps-Links
+- digitale Gästekarte mit Kopierfunktionen für WLAN und Passwort
+- Schritt-für-Schritt-Anreise- und Check-in-Assistent
+- installierbare Progressive Web App (PWA)
+- Offline-Grundfunktion über Service Worker
+- zentrale Unterkunftskonfiguration in `assets/data/villa-am-kurpark.js`
+
+Wichtig:
+- Die Karte benötigt beim ersten Laden Internet.
+- Persönliche Türcodes werden bewusst nicht in der zentralen Konfiguration gespeichert.
+- Änderungen an WLAN, Adresse, Kontakten und Kartenorten können künftig zentral in `assets/data/villa-am-kurpark.js` vorgenommen werden.
+
+
+## Neues Logo als SVG
+
+- `ME_LIVING_logo_dark.svg` – transparentes Logo für dunkle Hintergründe
+- `ME_LIVING_logo_light.svg` – transparente Variante für helle Hintergründe
+- `ME_LIVING_logo_full.svg` – vollständige Variante mit schwarzem Hintergrund
+- Favicon und PWA-App-Icons wurden auf das neue Logo abgestimmt.
+- Alte Logo-Verweise und das zuvor eingebettete Header-Logo wurden ersetzt.
