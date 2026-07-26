@@ -84,13 +84,20 @@ Die vorherige automatisch vektorisierte SVG-Version wird nicht mehr verwendet.
 Eine neue Service-Worker-Cache-Version verhindert, dass weiterhin das alte Logo erscheint.
 
 
-## Designanpassung an das neue Logo
+## Version 4.0 – Boutique-Hotel-Redesign
 
-Die komplette Website wurde an die neue Markenwelt angepasst:
+Vollständig umgesetzt:
+- Schwarz-, Champagner-Gold-, Ivory- und Stone-Farbwelt
+- neues ME-LIVING-Logo in Header, Hero und Footer
+- Cormorant Garamond für Überschriften und Inter für Fließtext
+- zweispaltiger Hero mit digitalem Concierge-Auftritt
+- einheitliche Premium-Karten, Buttons, Icons, Schatten und Rundungen
+- Wetterkarte und Veranstaltungen im Hotel-Event-Stil
+- Self Check-In als visuelle Timeline
+- digitale Gästekarte in Member-Card-/Goldfolie-Optik
+- angepasste Kartenmarker und Pop-ups
+- Concierge-Kontaktbereich
+- dezente Scroll-Animationen mit Unterstützung für reduzierte Bewegung
+- neue PWA-Farben, Icons und Cache-Version
 
-- Hauptfarbe: Schwarz `#050505`
-- Akzentfarbe: Gold `#B0874F`
-- Helle Flächen: Weiß und Creme
-- Header, Hero, Self Check-In, digitale Gästekarte, Wetter, Kontakt und Footer wurden neu abgestimmt.
-- Karten, Buttons, Icons, Hover-Zustände und Fokusrahmen nutzen jetzt ein einheitliches Schwarz-Gold-System.
-- PWA-App-Icons und Browser-Theme wurden ebenfalls angepasst.
+Alle Funktionen und bestehenden Sprachversionen bleiben erhalten.

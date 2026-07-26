@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let map;
   let markerLayer;
   const categoryColors = {
-    accommodation:"#c6a46a",parking:"#4b78b8",cafe:"#a06c45",restaurant:"#a84b45",
-    wellness:"#4a927f",sight:"#64814e",shopping:"#6f5a9e"
+    accommodation:"#b99052",parking:"#252525",cafe:"#c4a16d",restaurant:"#96703e",
+    wellness:"#5d5549",sight:"#d0b784",shopping:"#77716a"
   };
   const categoryLabels = {
     all:t.all,accommodation:t.accommodation,parking:t.parking,cafe:t.cafe,
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     markerLayer.clearLayers();
     const selected = config.places.filter(p => category === "all" || p.category === category);
     selected.forEach(place => {
-      const color = categoryColors[place.category] || "#18352f";
+      const color = categoryColors[place.category] || "#050505";
       const icon = L.divIcon({
         className:"",
         html:`<div class="marker-dot" style="background:${color}"></div>`,
