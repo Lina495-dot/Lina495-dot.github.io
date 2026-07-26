@@ -73,3 +73,12 @@ Wichtig:
 - `ME_LIVING_logo_full.svg` – vollständige Variante mit schwarzem Hintergrund
 - Favicon und PWA-App-Icons wurden auf das neue Logo abgestimmt.
 - Alte Logo-Verweise und das zuvor eingebettete Header-Logo wurden ersetzt.
+
+
+## Logo-Korrektur
+
+Das Logo wird jetzt als originale PNG-Datei eingebunden:
+`assets/images/logo/ME_LIVING_logo_final.png`
+
+Die vorherige automatisch vektorisierte SVG-Version wird nicht mehr verwendet.
+Eine neue Service-Worker-Cache-Version verhindert, dass weiterhin das alte Logo erscheint.

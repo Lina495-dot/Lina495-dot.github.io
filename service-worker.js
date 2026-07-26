@@ -1,11 +1,11 @@
 
-const CACHE="me-living-v3-logo-svg";
+const CACHE="me-living-v3-logo-final-v4";
 const CORE=[
   "/", "/index.html", "/offline.html", "/manifest.webmanifest",
   "/de/villa-am-kurpark.html","/en/villa-am-kurpark.html","/nl/villa-am-kurpark.html",
   "/assets/css/guide.css","/assets/js/app.js","/assets/js/weather.js","/assets/js/events.js",
   "/assets/js/features.js","/assets/data/villa-am-kurpark.js",
-  "/assets/images/logo/ME_LIVING_logo_dark.svg",
+  "/assets/images/logo/ME_LIVING_logo_final.png",
   "/assets/icons/icon-192.png","/assets/icons/icon-512.png"
 ];
 self.addEventListener("install",event=>{
