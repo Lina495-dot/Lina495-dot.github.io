@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ME LIVING | Guest Guide</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#18352f;color:white;font-family:system-ui;text-align:center}
-.wrap{padding:32px}.logo{width:min(520px,85vw);filter:none;margin-bottom:30px}
-.links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-a{padding:13px 22px;border-radius:999px;text-decoration:none;background:#c6a46a;color:#18352f;font-weight:800}
-p{color:rgba(255,255,255,.78)}
-</style>
-<script>
-(function(){
-  const saved=localStorage.getItem('melivingLang');
-  if(saved && ['de','en','nl'].includes(saved)){location.replace(saved+'/');return;}
-  const l=(navigator.language||'en').toLowerCase();
-  const target=l.startsWith('de')?'de':l.startsWith('nl')?'nl':'en';
-  location.replace(target+'/');
-})();
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#18352f">
+  <meta name="description" content="ME LIVING – Digitale Gästeguides">
+  <title>ME LIVING Guest Guide</title>
+  <link rel="icon" href="assets/images/logo/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/language.css">
 </head>
-<body><div class="wrap">
-<img class="logo" src="ME_LIVING_APARTMENTS_white.svg" alt="ME LIVING">
-<p>Sprache wählen · Choose language · Kies taal</p>
-<div class="links">
-<a href="de/" onclick="localStorage.setItem('melivingLang','de')">Deutsch</a>
-<a href="en/" onclick="localStorage.setItem('melivingLang','en')">English</a>
-<a href="nl/" onclick="localStorage.setItem('melivingLang','nl')">Nederlands</a>
-</div></div></body></html>
+<body>
+  <main class="wrap">
+    <img class="logo" src="assets/images/logo/ME_LIVING_APARTMENTS_white.svg" alt="ME LIVING Apartments">
+    <p>Bitte wählen Sie Ihre Sprache · Please choose your language · Kies uw taal</p>
+    <nav class="links" aria-label="Sprache auswählen">
+      <a href="de/" data-language="de" lang="de">Deutsch</a>
+      <a href="en/" data-language="en" lang="en">English</a>
+      <a href="nl/" data-language="nl" lang="nl">Nederlands</a>
+    </nav>
+  </main>
+  <script src="assets/js/language.js" defer></script>
+</body>
+</html>

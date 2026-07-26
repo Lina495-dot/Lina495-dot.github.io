@@ -1,0 +1,35 @@
+
+:root{
+  --green:#18352f;
+  --gold:#c6a46a;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(198,164,106,.22),transparent 25%),
+    linear-gradient(135deg,#28564c,#102c25);
+  color:#fff;
+  font-family:Inter,system-ui,sans-serif;
+  text-align:center;
+}
+.wrap{width:min(720px,calc(100% - 30px));padding:42px}
+.logo{width:min(500px,88vw);height:auto;margin:0 auto 34px}
+p{color:rgba(255,255,255,.8);font-size:1.04rem;margin-bottom:25px}
+.links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.links a{
+  min-width:130px;
+  min-height:50px;
+  display:grid;
+  place-items:center;
+  padding:12px 20px;
+  border-radius:999px;
+  text-decoration:none;
+  background:var(--gold);
+  color:var(--green);
+  font-weight:850;
+}
+:focus-visible{outline:3px solid #fff;outline-offset:4px}
