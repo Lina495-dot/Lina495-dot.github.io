@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#18352f">
   <meta name="description" content="Digitaler Gästeguide der ME LIVING Villa am Kurpark in Bad Salzuflen.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
   <title>Villa am Kurpark | ME LIVING Gästeguide</title>
 
   <style>
@@ -488,13 +489,38 @@
       line-height:1.7;
     }
 
+
+    .brand-logo{
+      height:62px;
+      width:auto;
+      display:block;
+    }
+    .brand-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      text-decoration:none;
+      gap:2px;
+    }
+    .brand-subtitle{
+      color:var(--gold);
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    @media(max-width:700px){
+      .brand-logo{height:48px}
+      .brand-subtitle{font-size:.62rem}
+    }
+
 </style>
 </head>
 
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="index.html">ME LIVING<small>Zur Unterkunftsübersicht</small></a>
+      <a class="brand-wrap" href="index.html"><img class="brand-logo" src="ME_LIVING_APARTMENTS_white.svg" alt="ME LIVING Apartments"><span class="brand-subtitle">Villa am Kurpark · Bad Salzuflen</span></a>
 
       <nav class="navlinks" id="navlinks">
         <a href="#infos">Infos</a>
