@@ -129,27 +129,120 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // PWA install
-  let deferredPrompt;
-  const installButton = document.querySelector("[data-install-app]");
-  const installStatus = document.querySelector("[data-install-status]");
+
+  // PWA installation: system prompt where supported, instructions elsewhere.
+  let deferredPrompt = null;
+  const installButtons = document.querySelectorAll("[data-install-app]");
+  const installModal = document.querySelector("[data-install-modal]");
+  const installModalText = document.querySelector("[data-install-modal-text]");
+  const installModalTitle = document.querySelector("[data-install-modal-title]");
+  const installModalClose = document.querySelector("[data-install-modal-close]");
+
+  const installCopy = {
+    de: {
+      title: "Guide zum Startbildschirm hinzufügen",
+      ios: "Tippen Sie unten im Browser auf das Teilen-Symbol □↑ und wählen Sie anschließend „Zum Home-Bildschirm“.",
+      android: "Öffnen Sie das Browser-Menü ⋮ und wählen Sie „App installieren“ oder „Zum Startbildschirm hinzufügen“.",
+      desktop: "Öffnen Sie das Browser-Menü und wählen Sie „ME LIVING installieren“ oder das Installationssymbol in der Adresszeile.",
+      installed: "Der ME LIVING Guest Guide ist bereits installiert."
+    },
+    en: {
+      title: "Add the guide to your home screen",
+      ios: "Tap the Share icon □↑ in the browser and then select “Add to Home Screen”.",
+      android: "Open the browser menu ⋮ and select “Install app” or “Add to Home screen”.",
+      desktop: "Open the browser menu and select “Install ME LIVING”, or use the install icon in the address bar.",
+      installed: "The ME LIVING Guest Guide is already installed."
+    },
+    nl: {
+      title: "Voeg de gids toe aan uw beginscherm",
+      ios: "Tik onderaan in de browser op het deel-symbool □↑ en kies daarna ‘Zet op beginscherm’.",
+      android: "Open het browsermenu ⋮ en kies ‘App installeren’ of ‘Toevoegen aan startscherm’.",
+      desktop: "Open het browsermenu en kies ‘ME LIVING installeren’, of gebruik het installatiepictogram in de adresbalk.",
+      installed: "De ME LIVING Guest Guide is al geïnstalleerd."
+    }
+  };
+
+  const installText = installCopy[lang] || installCopy.de;
+  const isStandalone = window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true;
+  const ua = navigator.userAgent || "";
+  const isIOS = /iphone|ipad|ipod/i.test(ua);
+  const isAndroid = /android/i.test(ua);
+
+  const openInstallHelp = (message) => {
+    if (!installModal) return;
+    if (installModalTitle) installModalTitle.textContent = installText.title;
+    if (installModalText) installModalText.textContent = message;
+    installModal.hidden = false;
+    document.body.classList.add("install-modal-open");
+    if (installModalClose) installModalClose.focus();
+  };
+
+  const closeInstallHelp = () => {
+    if (!installModal) return;
+    installModal.hidden = true;
+    document.body.classList.remove("install-modal-open");
+  };
+
+  installButtons.forEach((button) => {
+    // Button should always be visible.
+    button.hidden = false;
+
+    button.addEventListener("click", async () => {
+      if (isStandalone) {
+        openInstallHelp(installText.installed);
+        return;
+      }
+
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const result = await deferredPrompt.userChoice;
+        if (result.outcome === "accepted") {
+          deferredPrompt = null;
+        }
+        return;
+      }
+
+      if (isIOS) {
+        openInstallHelp(installText.ios);
+      } else if (isAndroid) {
+        openInstallHelp(installText.android);
+      } else {
+        openInstallHelp(installText.desktop);
+      }
+    });
+  });
+
   window.addEventListener("beforeinstallprompt", (event) => {
     event.preventDefault();
     deferredPrompt = event;
-    if (installButton) installButton.hidden = false;
+    installButtons.forEach((button) => {
+      button.hidden = false;
+      button.classList.add("install-ready");
+    });
   });
-  if (installButton) {
-    installButton.addEventListener("click", async () => {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        await deferredPrompt.userChoice;
-        deferredPrompt = null;
-        installButton.hidden = true;
-      } else if (installStatus) {
-        installStatus.hidden = false;
-      }
+
+  window.addEventListener("appinstalled", () => {
+    deferredPrompt = null;
+    installButtons.forEach((button) => button.classList.remove("install-ready"));
+    closeInstallHelp();
+  });
+
+  if (installModalClose) {
+    installModalClose.addEventListener("click", closeInstallHelp);
+  }
+  if (installModal) {
+    installModal.addEventListener("click", (event) => {
+      if (event.target === installModal) closeInstallHelp();
     });
   }
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && installModal && !installModal.hidden) {
+      closeInstallHelp();
+    }
+  });
+
+
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("../service-worker.js").catch(() => {});
   }

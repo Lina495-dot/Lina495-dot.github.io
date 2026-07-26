@@ -101,3 +101,14 @@ Vollständig umgesetzt:
 - neue PWA-Farben, Icons und Cache-Version
 
 Alle Funktionen und bestehenden Sprachversionen bleiben erhalten.
+
+
+## Installationsbutton korrigiert
+
+Der Button „Zum Startbildschirm hinzufügen“ funktioniert jetzt browserübergreifend:
+
+- Android/Chrome: öffnet den nativen Installationsdialog, sofern verfügbar.
+- Windows/macOS mit unterstütztem Browser: öffnet den nativen Installationsdialog.
+- iPhone/iPad: zeigt eine Anleitung über Teilen → Zum Home-Bildschirm.
+- Nicht unterstützte Browser: zeigen eine passende manuelle Anleitung.
+- Ist die PWA bereits installiert, wird dies angezeigt.

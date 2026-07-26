@@ -497,3 +497,72 @@ footer{background:#050505;color:rgba(255,255,255,.48);padding:42px 18px;text-ali
   *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}
   [data-reveal]{opacity:1;transform:none}
 }
+
+
+/* PWA install button and cross-browser installation instructions */
+[data-install-app]{
+  display:inline-flex !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+[data-install-app].install-ready{
+  background:var(--gold);
+  color:var(--black);
+  border-color:var(--gold);
+  box-shadow:0 12px 30px rgba(185,144,82,.22);
+}
+.install-modal[hidden]{display:none !important}
+.install-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(9px);
+  -webkit-backdrop-filter:blur(9px);
+}
+.install-modal-card{
+  width:min(520px,100%);
+  padding:32px;
+  border-radius:28px;
+  background:linear-gradient(180deg,#fff,#faf7f0);
+  border:1px solid rgba(185,144,82,.3);
+  box-shadow:0 30px 90px rgba(0,0,0,.38);
+  text-align:center;
+}
+.install-modal-icon{
+  width:58px;
+  height:58px;
+  margin:0 auto 18px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  background:var(--black);
+  color:var(--gold-light);
+  border:1px solid rgba(185,144,82,.28);
+  font-size:1.7rem;
+  font-weight:900;
+}
+.install-modal-card h3{
+  color:var(--black);
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:2rem;
+  line-height:1.05;
+  margin-bottom:13px;
+}
+.install-modal-card p{
+  color:var(--muted);
+  line-height:1.72;
+  margin-bottom:22px;
+}
+body.install-modal-open{overflow:hidden}
+@media(max-width:620px){
+  .install-modal-card{
+    padding:26px 21px;
+    border-radius:23px;
+  }
+  .install-modal-card h3{font-size:1.75rem}
+  .install-modal-card .btn{width:100%}
+}
