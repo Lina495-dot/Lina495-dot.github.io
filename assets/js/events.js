@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const list = root.querySelector("[data-events-list]");
   const empty = root.querySelector("[data-events-empty]");
+  list.innerHTML = "";
 
   if (!upcoming.length) {
     empty.textContent = t.empty;

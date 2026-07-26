@@ -41,3 +41,10 @@ Wichtig: Nicht nur einzelne HTML-Dateien kopieren. Die CSS-, JS- und Logo-Ordner
 - Der Button unter den Veranstaltungen führt zum vollständigen offiziellen Veranstaltungskalender.
 - Für das Live-Wetter benötigt der Gast eine Internetverbindung.
 - Veranstaltungshighlights sollten regelmäßig ergänzt werden; der offizielle Kalenderlink bleibt immer aktuell.
+
+
+## Sichtbarkeitskorrektur
+- Wetter und Veranstaltungen stehen jetzt direkt unter dem Schnellzugriff.
+- Ein zusätzlicher Schnellzugriff führt zum Bereich.
+- Veranstaltungskarten sind als statische Absicherung bereits im HTML sichtbar.
+- Versionsparameter verhindern, dass Browser alte CSS- oder JavaScript-Dateien aus dem Cache laden.

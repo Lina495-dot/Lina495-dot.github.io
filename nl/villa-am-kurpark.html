@@ -9,7 +9,44 @@
   <title>Villa am Kurpark | ME LIVING Gastengids</title>
 
   
-<link rel="stylesheet" href="../assets/css/guide.css">
+<link rel="stylesheet" href="../assets/css/guide.css?v=3">
+<style>
+/* Wetter & Veranstaltungen: sichtbarer Schnellzugriff und Fallback */
+.current-shortcut{
+  width:min(1180px,calc(100% - 36px));
+  margin:18px auto 0;
+  position:relative;
+  z-index:8;
+}
+.current-shortcut a{
+  min-height:54px;
+  padding:0 22px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:850;
+  background:linear-gradient(135deg,#18352f,#28554a);
+  box-shadow:0 14px 34px rgba(21,45,39,.13);
+}
+.current-shortcut a span:last-child{color:#c6a46a;font-size:1.35rem}
+.live-section{display:block!important;visibility:visible!important;opacity:1!important;padding:100px 0!important}
+.live-panel{display:block!important}
+.events-list:empty::before{
+  content:"Veranstaltungen werden geladen …";
+  display:block;
+  padding:0 28px 22px;
+  color:#6d746f;
+}
+@media(max-width:680px){
+  .current-shortcut{width:min(100% - 24px,1180px);margin-top:14px}
+  .current-shortcut a{min-height:58px;padding:0 18px;border-radius:16px}
+  .live-section{padding:76px 0!important}
+}
+</style>
 </head>
 
 <body>
@@ -115,6 +152,59 @@
 
 
   <main>
+<div class="current-shortcut">
+  <a href="#aktuell"><span>Weer & evenementen<small style="display:block;font-weight:500;opacity:.78;margin-top:2px">Actuele informatie openen</small></span><span>↓</span></a>
+</div>
+
+<section class="live-section" id="aktuell">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Actueel ter plaatse</div>
+          <h2>Weer en evenementen</h2>
+          <p class="lead">Actueel weer voor Bad Salzuflen en geselecteerde evenementen in één oogopslag.</p>
+        </div>
+
+        <div class="live-grid">
+          <article class="live-panel" data-weather>
+            <div class="live-panel-head">
+              <div class="eyebrow">Live weer</div>
+              <h3>Bad Salzuflen</h3>
+            </div>
+            <div class="weather-card">
+              <div class="weather-now">
+                <div class="weather-symbol" data-weather-icon>🌦️</div>
+                <div>
+                  <div class="weather-temp" data-weather-temp>–°</div>
+                  <div class="weather-condition" data-weather-condition>–</div>
+                </div>
+              </div>
+              <div class="weather-details">
+                <div class="weather-detail"><small>Gevoelstemperatuur</small><strong data-weather-feels>–</strong></div>
+                <div class="weather-detail"><small>Wind</small><strong data-weather-wind>–</strong></div>
+                <div class="weather-detail"><small>Neerslag</small><strong data-weather-rain>–</strong></div>
+              </div>
+              <div class="weather-forecast" data-weather-forecast></div>
+            </div>
+            <p class="live-status" data-weather-status></p>
+            <p class="events-footer data-note">Weergegevens: Open-Meteo. De verwachting wordt bijgewerkt wanneer de pagina wordt geopend.</p>
+          </article>
+
+          <article class="live-panel" data-events>
+            <div class="live-panel-head">
+              <div class="eyebrow">Evenementen</div>
+              <h3>Geselecteerde komende hoogtepunten</h3>
+            </div>
+            <div class="events-list" data-events-list><article class="event-card event-fallback"><div class="event-date"><strong>06</strong><small>aug</small></div><div class="event-content"><h4>Weinfest</h4><p>Wijnfeest op de Salzhof in het hart van de oude binnenstad.</p><a class="event-link" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Meer informatie</a></div></article><article class="event-card event-fallback"><div class="event-date"><strong>22</strong><small>aug</small></div><div class="event-content"><h4>Nachtflohmarkt</h4><p>Avondvlooienmarkt in de historische binnenstad.</p><a class="event-link" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Meer informatie</a></div></article><article class="event-card event-fallback"><div class="event-date"><strong>04</strong><small>sep</small></div><div class="event-content"><h4>Nacht der 10.000 Kerzen</h4><p>Kaarsen, lampions en muziek zorgen voor een bijzondere sfeer.</p><a class="event-link" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Meer informatie</a></div></article></div>
+            <p class="events-empty" data-events-empty></p>
+            <div class="events-footer">
+              <a class="btn btn-dark" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Volledige kalender openen</a>
+              <p class="data-note">Evenementgegevens: officiële kalender van Staatsbad Salzuflen. Hoogtepunten worden op datum gefilterd.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="infos">
       <div class="container">
         <div class="section-head">
@@ -315,59 +405,7 @@ Tik eerst op het <strong>touchpad boven de deurklink</strong>, om het te activer
 </div>
       </div>
     </section>
-
-    
-    <section class="live-section" id="aktuell">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Actueel ter plaatse</div>
-          <h2>Weer en evenementen</h2>
-          <p class="lead">Actueel weer voor Bad Salzuflen en geselecteerde evenementen in één oogopslag.</p>
-        </div>
-
-        <div class="live-grid">
-          <article class="live-panel" data-weather>
-            <div class="live-panel-head">
-              <div class="eyebrow">Live weer</div>
-              <h3>Bad Salzuflen</h3>
-            </div>
-            <div class="weather-card">
-              <div class="weather-now">
-                <div class="weather-symbol" data-weather-icon>🌦️</div>
-                <div>
-                  <div class="weather-temp" data-weather-temp>–°</div>
-                  <div class="weather-condition" data-weather-condition>–</div>
-                </div>
-              </div>
-              <div class="weather-details">
-                <div class="weather-detail"><small>Gevoelstemperatuur</small><strong data-weather-feels>–</strong></div>
-                <div class="weather-detail"><small>Wind</small><strong data-weather-wind>–</strong></div>
-                <div class="weather-detail"><small>Neerslag</small><strong data-weather-rain>–</strong></div>
-              </div>
-              <div class="weather-forecast" data-weather-forecast></div>
-            </div>
-            <p class="live-status" data-weather-status></p>
-            <p class="events-footer data-note">Weergegevens: Open-Meteo. De verwachting wordt bijgewerkt wanneer de pagina wordt geopend.</p>
-          </article>
-
-          <article class="live-panel" data-events>
-            <div class="live-panel-head">
-              <div class="eyebrow">Evenementen</div>
-              <h3>Geselecteerde komende hoogtepunten</h3>
-            </div>
-            <div class="events-list" data-events-list></div>
-            <p class="events-empty" data-events-empty></p>
-            <div class="events-footer">
-              <a class="btn btn-dark" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Volledige kalender openen</a>
-              <p class="data-note">Evenementgegevens: officiële kalender van Staatsbad Salzuflen. Hoogtepunten worden op datum gefilterd.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="soft" id="umgebung">
+<section class="soft" id="umgebung">
       <div class="container">
         <div class="section-head">
           <div class="eyebrow">Ontdek Bad Salzuflen</div>
@@ -507,8 +545,8 @@ Tik eerst op het <strong>touchpad boven de deurklink</strong>, om het te activer
   <a class="floating" href="https://wa.me/4915785844905" target="_blank" rel="noopener" aria-label="WhatsApp öffnen"><svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></a>
 
   
-<script src="../assets/js/app.js" defer></script>
-<script src="../assets/js/weather.js" defer></script>
-<script src="../assets/js/events.js" defer></script>
+<script src="../assets/js/app.js?v=3" defer></script>
+<script src="../assets/js/weather.js?v=3" defer></script>
+<script src="../assets/js/events.js?v=3" defer></script>
 </body>
 </html>

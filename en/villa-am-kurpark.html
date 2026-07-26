@@ -9,7 +9,44 @@
   <title>Villa am Kurpark | ME LIVING Gästeguide</title>
 
   
-<link rel="stylesheet" href="../assets/css/guide.css">
+<link rel="stylesheet" href="../assets/css/guide.css?v=3">
+<style>
+/* Wetter & Veranstaltungen: sichtbarer Schnellzugriff und Fallback */
+.current-shortcut{
+  width:min(1180px,calc(100% - 36px));
+  margin:18px auto 0;
+  position:relative;
+  z-index:8;
+}
+.current-shortcut a{
+  min-height:54px;
+  padding:0 22px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:850;
+  background:linear-gradient(135deg,#18352f,#28554a);
+  box-shadow:0 14px 34px rgba(21,45,39,.13);
+}
+.current-shortcut a span:last-child{color:#c6a46a;font-size:1.35rem}
+.live-section{display:block!important;visibility:visible!important;opacity:1!important;padding:100px 0!important}
+.live-panel{display:block!important}
+.events-list:empty::before{
+  content:"Veranstaltungen werden geladen …";
+  display:block;
+  padding:0 28px 22px;
+  color:#6d746f;
+}
+@media(max-width:680px){
+  .current-shortcut{width:min(100% - 24px,1180px);margin-top:14px}
+  .current-shortcut a{min-height:58px;padding:0 18px;border-radius:16px}
+  .live-section{padding:76px 0!important}
+}
+</style>
 </head>
 
 <body>
@@ -115,6 +152,59 @@
 
 
   <main>
+<div class="current-shortcut">
+  <a href="#aktuell"><span>Weather & events<small style="display:block;font-weight:500;opacity:.78;margin-top:2px">Open current information</small></span><span>↓</span></a>
+</div>
+
+<section class="live-section" id="aktuell">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Currently in town</div>
+          <h2>Weather and events</h2>
+          <p class="lead">Current weather for Bad Salzuflen and selected event highlights at a glance.</p>
+        </div>
+
+        <div class="live-grid">
+          <article class="live-panel" data-weather>
+            <div class="live-panel-head">
+              <div class="eyebrow">Live weather</div>
+              <h3>Bad Salzuflen</h3>
+            </div>
+            <div class="weather-card">
+              <div class="weather-now">
+                <div class="weather-symbol" data-weather-icon>🌦️</div>
+                <div>
+                  <div class="weather-temp" data-weather-temp>–°</div>
+                  <div class="weather-condition" data-weather-condition>–</div>
+                </div>
+              </div>
+              <div class="weather-details">
+                <div class="weather-detail"><small>Feels like</small><strong data-weather-feels>–</strong></div>
+                <div class="weather-detail"><small>Wind</small><strong data-weather-wind>–</strong></div>
+                <div class="weather-detail"><small>Precipitation</small><strong data-weather-rain>–</strong></div>
+              </div>
+              <div class="weather-forecast" data-weather-forecast></div>
+            </div>
+            <p class="live-status" data-weather-status></p>
+            <p class="events-footer data-note">Weather data: Open-Meteo. The forecast updates whenever the page is opened.</p>
+          </article>
+
+          <article class="live-panel" data-events>
+            <div class="live-panel-head">
+              <div class="eyebrow">Events</div>
+              <h3>Selected upcoming highlights</h3>
+            </div>
+            <div class="events-list" data-events-list><article class="event-card event-fallback"><div class="event-date"><strong>06</strong><small>Aug</small></div><div class="event-content"><h4>Weinfest</h4><p>Wine festival at Salzhof in the heart of the old town.</p><a class="event-link" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Learn more</a></div></article><article class="event-card event-fallback"><div class="event-date"><strong>22</strong><small>Aug</small></div><div class="event-content"><h4>Nachtflohmarkt</h4><p>Evening flea market in the historic town centre.</p><a class="event-link" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Learn more</a></div></article><article class="event-card event-fallback"><div class="event-date"><strong>04</strong><small>Sep</small></div><div class="event-content"><h4>Nacht der 10.000 Kerzen</h4><p>Candles, lanterns and music create a special atmosphere.</p><a class="event-link" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Learn more</a></div></article></div>
+            <p class="events-empty" data-events-empty></p>
+            <div class="events-footer">
+              <a class="btn btn-dark" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Open full calendar</a>
+              <p class="data-note">Event data: official Staatsbad Salzuflen calendar. Highlights are filtered by date.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="infos">
       <div class="container">
         <div class="section-head">
@@ -315,59 +405,7 @@ First tap the <strong>touchpad above the door handle</strong>, to activate it. T
 </div>
       </div>
     </section>
-
-    
-    <section class="live-section" id="aktuell">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Currently in town</div>
-          <h2>Weather and events</h2>
-          <p class="lead">Current weather for Bad Salzuflen and selected event highlights at a glance.</p>
-        </div>
-
-        <div class="live-grid">
-          <article class="live-panel" data-weather>
-            <div class="live-panel-head">
-              <div class="eyebrow">Live weather</div>
-              <h3>Bad Salzuflen</h3>
-            </div>
-            <div class="weather-card">
-              <div class="weather-now">
-                <div class="weather-symbol" data-weather-icon>🌦️</div>
-                <div>
-                  <div class="weather-temp" data-weather-temp>–°</div>
-                  <div class="weather-condition" data-weather-condition>–</div>
-                </div>
-              </div>
-              <div class="weather-details">
-                <div class="weather-detail"><small>Feels like</small><strong data-weather-feels>–</strong></div>
-                <div class="weather-detail"><small>Wind</small><strong data-weather-wind>–</strong></div>
-                <div class="weather-detail"><small>Precipitation</small><strong data-weather-rain>–</strong></div>
-              </div>
-              <div class="weather-forecast" data-weather-forecast></div>
-            </div>
-            <p class="live-status" data-weather-status></p>
-            <p class="events-footer data-note">Weather data: Open-Meteo. The forecast updates whenever the page is opened.</p>
-          </article>
-
-          <article class="live-panel" data-events>
-            <div class="live-panel-head">
-              <div class="eyebrow">Events</div>
-              <h3>Selected upcoming highlights</h3>
-            </div>
-            <div class="events-list" data-events-list></div>
-            <p class="events-empty" data-events-empty></p>
-            <div class="events-footer">
-              <a class="btn btn-dark" href="https://www.staatsbad-salzuflen.de/stadterlebnis/veranstaltungskalender" target="_blank" rel="noopener">Open full calendar</a>
-              <p class="data-note">Event data: official Staatsbad Salzuflen calendar. Highlights are filtered by date.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="soft" id="umgebung">
+<section class="soft" id="umgebung">
       <div class="container">
         <div class="section-head">
           <div class="eyebrow">Discover Bad Salzuflen</div>
@@ -507,8 +545,8 @@ First tap the <strong>touchpad above the door handle</strong>, to activate it. T
   <a class="floating" href="https://wa.me/4915785844905" target="_blank" rel="noopener" aria-label="WhatsApp öffnen"><svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></a>
 
   
-<script src="../assets/js/app.js" defer></script>
-<script src="../assets/js/weather.js" defer></script>
-<script src="../assets/js/events.js" defer></script>
+<script src="../assets/js/app.js?v=3" defer></script>
+<script src="../assets/js/weather.js?v=3" defer></script>
+<script src="../assets/js/events.js?v=3" defer></script>
 </body>
 </html>
