@@ -10,21 +10,33 @@ document.addEventListener("DOMContentLoaded", () => {
     de:{
       required:"Bitte füllen Sie beide Felder aus.",
       postal:"Bitte geben Sie eine gültige fünfstellige Postleitzahl ein.",
-      unavailable:"Die sichere Buchungsprüfung wird derzeit eingerichtet. Bitte verwenden Sie bis dahin den persönlichen Link aus Ihrer Anreisenachricht."
+      invalid:"Die eingegebenen Daten konnten keiner aktuellen Buchung zugeordnet werden.",
+      unavailable:"Der Gastbereich ist momentan nicht erreichbar. Bitte versuchen Sie es später erneut.",
+      loading:"Buchung wird geprüft …"
     },
     en:{
       required:"Please complete both fields.",
       postal:"Please enter a valid five-digit postal code.",
-      unavailable:"Secure booking verification is currently being set up. Until then, please use the personal link in your arrival message."
+      invalid:"The details could not be matched to a current booking.",
+      unavailable:"The guest area is currently unavailable. Please try again later.",
+      loading:"Checking your booking …"
     },
     nl:{
       required:"Vul beide velden in.",
       postal:"Vul een geldige postcode van vijf cijfers in.",
-      unavailable:"De veilige boekingscontrole wordt momenteel ingericht. Gebruik tot die tijd de persoonlijke link in uw aankomstbericht."
+      invalid:"De ingevoerde gegevens konden niet aan een actuele boeking worden gekoppeld.",
+      unavailable:"Het gastgedeelte is momenteel niet bereikbaar. Probeer het later opnieuw.",
+      loading:"Uw boeking wordt gecontroleerd …"
     }
   };
+
   const lang = document.documentElement.lang || "de";
   const t = copy[lang] || copy.de;
+  const dashboardByLanguage = {
+    de:"dashboard-de.html",
+    en:"dashboard-en.html",
+    nl:"dashboard-nl.html"
+  };
 
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -41,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!postalValue) postalCode.setAttribute("aria-invalid","true");
       return;
     }
+
     if (!/^\d{5}$/.test(postalValue)) {
       postalCode.setAttribute("aria-invalid","true");
       message.textContent = t.postal;
@@ -48,11 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     submit.disabled = true;
+    const originalText = submit.textContent;
+    submit.textContent = t.loading;
 
     try {
-      // Prepared secure endpoint. It deliberately contains no booking data
-      // and does not fall back to insecure client-side credential checks.
-      const response = await fetch("/api/guest-access", {
+      const response = await fetch("https://me-living-guest-access.pm4nbrt8jy.workers.dev/login", {
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({
@@ -62,18 +75,34 @@ document.addEventListener("DOMContentLoaded", () => {
         })
       });
 
-      if (!response.ok) throw new Error("verification-unavailable");
-      const result = await response.json();
+      let result = null;
+      try {
+        result = await response.json();
+      } catch {
+        result = null;
+      }
 
-      if (result?.redirectUrl) {
-        window.location.assign(result.redirectUrl);
+      if (!response.ok || !result?.success || !result?.token) {
+        message.textContent =
+          response.status === 401
+            ? (result?.message || t.invalid)
+            : (result?.message || t.unavailable);
         return;
       }
-      throw new Error("invalid-response");
+
+      sessionStorage.setItem("meLivingGuestToken", result.token);
+      sessionStorage.setItem("meLivingGuestName", result.guestName || nameValue);
+      sessionStorage.setItem("meLivingGuestArrival", result.arrival || "");
+      sessionStorage.setItem("meLivingGuestDeparture", result.departure || "");
+      sessionStorage.setItem("meLivingGuestProperty", result.property || "brunnenstrasse");
+      sessionStorage.setItem("meLivingGuestLanguage", lang);
+
+      window.location.assign(dashboardByLanguage[lang] || dashboardByLanguage.de);
     } catch (error) {
       message.textContent = t.unavailable;
     } finally {
       submit.disabled = false;
+      submit.textContent = originalText;
     }
   });
 });

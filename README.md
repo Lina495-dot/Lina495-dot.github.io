@@ -192,3 +192,14 @@ Noch erforderlich:
   - Mein Aufenthalt
   - Umgebung entdecken
 - Deutsch, Englisch und Niederländisch angepasst
+
+
+## Version 6.5 – Login mit Cloudflare verbunden
+
+- Login sendet Nachname und PLZ an `https://me-living-guest-access.pm4nbrt8jy.workers.dev/login`
+- gültige Buchungen werden zum privaten Dashboard weitergeleitet
+- Session-Token wird nur im aktuellen Browser-Tab gespeichert
+- Gastname sowie An- und Abreisedatum werden angezeigt
+- ungültige Buchungsdaten und Serverfehler erhalten verständliche Meldungen
+- Deutsch, Englisch und Niederländisch
+- noch keine privaten WLAN- oder Zugangsdaten im statischen GitHub-Code

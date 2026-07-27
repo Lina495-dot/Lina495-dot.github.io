@@ -1,6 +1,10 @@
 
-const CACHE="me-living-guide-v6-3-1-stay-section";
+const CACHE="me-living-guide-v6-5-login-connected";
 const CORE=[
+  "/private/dashboard-nl.html",
+  "/private/dashboard-en.html",
+  "/private/dashboard-de.html",
+  "/assets/js/mein-aufenthalt-dashboard.js",
   "/private/mein-aufenthalt-nl.html",
   "/private/mein-aufenthalt-en.html",
   "/private/mein-aufenthalt-de.html",
