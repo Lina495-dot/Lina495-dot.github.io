@@ -1,5 +1,5 @@
 
-const CACHE="me-living-v4-install-fix-1";
+const CACHE="me-living-4-1-final";
 const CORE=[
   "/assets/images/logo/ME_LIVING_logo_v4.png",
   "/", "/index.html", "/offline.html", "/manifest.webmanifest",

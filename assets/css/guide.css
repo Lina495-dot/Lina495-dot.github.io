@@ -566,3 +566,100 @@ body.install-modal-open{overflow:hidden}
   .install-modal-card h3{font-size:1.75rem}
   .install-modal-card .btn{width:100%}
 }
+
+
+/* ME LIVING 4.1 – Logo ohne Kasten und lesbarer Hero */
+.hero{
+  background:
+    radial-gradient(circle at 50% 16%, rgba(185,144,82,.18), transparent 24%),
+    radial-gradient(circle at 82% 22%, rgba(185,144,82,.10), transparent 19%),
+    linear-gradient(180deg,#050505 0%,#080808 52%,#11100f 100%) !important;
+}
+.hero-content{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  gap:0 !important;
+  max-width:920px !important;
+  margin:0 auto !important;
+  padding-top:145px !important;
+  padding-bottom:105px !important;
+}
+.hero-copy{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  width:100% !important;
+  max-width:860px !important;
+}
+.hero-brand,
+.hero-brand-panel,
+.hero-visual,
+.hero-card,
+.hero-logo-wrap,
+.hero-logo-card{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+  padding:0 !important;
+  min-height:0 !important;
+  width:auto !important;
+}
+.hero-brand-panel{
+  order:-1 !important;
+  margin:0 0 28px !important;
+  display:block !important;
+}
+.hero-brand-panel img,
+.hero-logo,
+.hero-brand img{
+  width:min(560px,82vw) !important;
+  max-width:560px !important;
+  height:auto !important;
+  object-fit:contain !important;
+  filter:none !important;
+  box-shadow:none !important;
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+}
+.hero h1{color:#fff !important;margin-top:18px !important;margin-bottom:18px !important}
+.hero .welcome-line,
+.hero .intro-text,
+.hero .concierge-line{color:rgba(255,255,255,.86) !important}
+.hero .welcome-line,
+.hero .intro-text strong{color:#d8bd88 !important}
+.hero .intro-text{max-width:720px !important;margin-left:auto !important;margin-right:auto !important}
+.hero-actions{justify-content:center !important}
+
+[data-install-app]{
+  display:inline-flex !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+.install-modal[hidden]{display:none !important}
+.install-modal{
+  position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:18px;
+  background:rgba(0,0,0,.72);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+}
+.install-modal-card{
+  width:min(520px,100%);padding:30px;border-radius:26px;
+  background:linear-gradient(180deg,#fff,#faf7f0);
+  border:1px solid rgba(185,144,82,.28);
+  box-shadow:0 30px 90px rgba(0,0,0,.4);text-align:center;
+}
+.install-modal-icon{
+  width:58px;height:58px;display:grid;place-items:center;margin:0 auto 17px;
+  border-radius:18px;background:#050505;color:#d8bd88;
+  border:1px solid rgba(185,144,82,.28);font-size:1.55rem;font-weight:900;
+}
+.install-modal-card h3{color:#050505 !important;font-size:1.75rem;margin-bottom:11px}
+.install-modal-card p{color:#716d66;line-height:1.7;margin-bottom:20px}
+body.install-modal-open{overflow:hidden}
+@media(max-width:680px){
+  .hero-content{padding-top:118px !important;padding-bottom:80px !important}
+  .hero-brand-panel img,.hero-logo,.hero-brand img{width:min(410px,88vw) !important}
+}
