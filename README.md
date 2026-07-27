@@ -125,3 +125,11 @@ Der Button „Zum Startbildschirm hinzufügen“ funktioniert jetzt browserüber
 - Installationsbutton browserübergreifend korrigiert
 - PWA-Theme, Icons und Cache aktualisiert
 - deutsche, englische und niederländische Version erhalten
+
+
+## Version 5.0.1 – Kartenkorrektur
+
+Wenn Leaflet nicht über den externen Server geladen werden kann, erscheint nun
+automatisch eine interaktive OpenStreetMap-Ersatzansicht. Sie kann weiterhin
+gezoomt und verschoben werden. Zusätzlich werden die gespeicherten Orte mit
+direkten Kartenlinks unterhalb der Karte eingeblendet.

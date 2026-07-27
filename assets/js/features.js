@@ -113,9 +113,36 @@ document.addEventListener("DOMContentLoaded", () => {
     markerLayer = L.layerGroup().addTo(map);
     renderMarkers();
   } else if (mapEl) {
-    mapEl.style.display = "none";
+    // Reliable fallback when the external Leaflet library cannot be loaded.
+    // The OpenStreetMap embed remains interactive (zoom and pan).
+    const lat = config.property.coordinates[0];
+    const lng = config.property.coordinates[1];
+    const deltaLat = 0.018;
+    const deltaLng = 0.032;
+    const bbox = [
+      lng - deltaLng,
+      lat - deltaLat,
+      lng + deltaLng,
+      lat + deltaLat
+    ].join(",");
+
+    mapEl.innerHTML = "";
+    const iframe = document.createElement("iframe");
+    iframe.className = "osm-fallback-frame";
+    iframe.title = lang === "en" ? "Interactive map of the area" :
+      lang === "nl" ? "Interactieve kaart van de omgeving" :
+      "Interaktive Karte der Umgebung";
+    iframe.loading = "lazy";
+    iframe.referrerPolicy = "no-referrer-when-downgrade";
+    iframe.src = "https://www.openstreetmap.org/export/embed.html?bbox=" +
+      encodeURIComponent(bbox) +
+      "&layer=mapnik&marker=" + encodeURIComponent(lat + "," + lng);
+    iframe.setAttribute("allowfullscreen", "");
+    mapEl.appendChild(iframe);
+
     const fallback = document.querySelector("[data-map-fallback]");
-    if (fallback) fallback.style.display = "block";
+    if (fallback) fallback.style.display = "none";
+    if (listEl) listEl.classList.add("fallback-visible");
   }
   renderList();
 

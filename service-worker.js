@@ -1,5 +1,5 @@
 
-const CACHE="me-living-v5-0";
+const CACHE="me-living-v5-0-map-fix";
 const CORE=[
   "/assets/images/logo/ME_LIVING_logo_v5_transparent.png",
   "/assets/images/logo/ME_LIVING_logo_v4.png",
