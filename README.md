@@ -136,3 +136,15 @@ Der Button „Zum Startbildschirm hinzufügen“ funktioniert jetzt browserüber
 - weitere Guides sind sichtbar als „wird eingerichtet“
 - keine sicherheitsrelevanten Informationen auf der öffentlichen Startseite
 - `.git` ist bewusst nicht im Update-Paket enthalten
+
+
+## ME LIVING Guide 6.1 – Brunnenstraße
+
+- Brunnenstraße in Deutsch, Englisch und Niederländisch
+- neues Herzstück „Was möchten Sie tun?“
+- Bereiche: Ankunft, Unterkunft, Essen & Trinken, Freizeit, Hilfe und Abreise
+- öffentlicher Bereich enthält keine WLAN-Passwörter, Türcodes oder Schlüsselinformationen
+- privater Gastbereich wird über den persönlichen Gastlink angekündigt
+- Parken am Rathaus und Rauchstraße
+- zwei große Balkone, Innenstadtlage und Waschmaschine
+- Brunnenstraße ist auf der zentralen Startseite aktiviert

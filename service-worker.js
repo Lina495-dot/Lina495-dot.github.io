@@ -1,6 +1,11 @@
 
-const CACHE="me-living-concierge-v6-start";
+const CACHE="me-living-guide-v6-1-brunnenstrasse";
 const CORE=[
+  "/nl/brunnenstrasse.html",
+  "/en/brunnenstrasse.html",
+  "/de/brunnenstrasse.html",
+  "/assets/js/brunnenstrasse.js",
+  "/assets/css/brunnenstrasse.css",
   "/assets/js/concierge-start.js",
   "/assets/css/concierge-start.css",
   "/assets/images/logo/ME_LIVING_logo_v5_transparent.png",
