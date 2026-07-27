@@ -125,3 +125,14 @@ Der Button „Zum Startbildschirm hinzufügen“ funktioniert jetzt browserüber
 - Installationsbutton browserübergreifend korrigiert
 - PWA-Theme, Icons und Cache aktualisiert
 - deutsche, englische und niederländische Version erhalten
+
+
+## ME LIVING Concierge 6.0 – neue Startseite
+
+- zentrale dreisprachige Startseite
+- Standortauswahl: Bad Salzuflen, Bad Pyrmont, Lemgo und Hameln
+- Unterkunftsübersicht inklusive Hauptallee- und Brake-Gebäudegruppen
+- Villa am Kurpark ist bereits aktiv verlinkt
+- weitere Guides sind sichtbar als „wird eingerichtet“
+- keine sicherheitsrelevanten Informationen auf der öffentlichen Startseite
+- `.git` ist bewusst nicht im Update-Paket enthalten

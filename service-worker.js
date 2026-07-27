@@ -1,6 +1,8 @@
 
-const CACHE="me-living-v5-1-1-compact-map";
+const CACHE="me-living-concierge-v6-start";
 const CORE=[
+  "/assets/js/concierge-start.js",
+  "/assets/css/concierge-start.css",
   "/assets/images/logo/ME_LIVING_logo_v5_transparent.png",
   "/assets/images/logo/ME_LIVING_logo_v4.png",
   "/", "/index.html", "/offline.html", "/manifest.webmanifest",
