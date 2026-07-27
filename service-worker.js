@@ -1,6 +1,7 @@
 
-const CACHE="me-living-4-1-final";
+const CACHE="me-living-v5-0";
 const CORE=[
+  "/assets/images/logo/ME_LIVING_logo_v5_transparent.png",
   "/assets/images/logo/ME_LIVING_logo_v4.png",
   "/", "/index.html", "/offline.html", "/manifest.webmanifest",
   "/de/villa-am-kurpark.html","/en/villa-am-kurpark.html","/nl/villa-am-kurpark.html",

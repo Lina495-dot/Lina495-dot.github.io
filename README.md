@@ -112,3 +112,16 @@ Der Button „Zum Startbildschirm hinzufügen“ funktioniert jetzt browserüber
 - iPhone/iPad: zeigt eine Anleitung über Teilen → Zum Home-Bildschirm.
 - Nicht unterstützte Browser: zeigen eine passende manuelle Anleitung.
 - Ist die PWA bereits installiert, wird dies angezeigt.
+
+
+## Version 5.0
+
+- komplett neues Schwarz-Gold-Boutique-Design
+- transparentes ME-LIVING-Logo ohne schwarzen Bildkasten
+- überarbeitete Start- und Sprachseiten
+- neuer Hero, Header, Buttons, Karten und Footer
+- Self Check-In als Timeline
+- Wetter, Veranstaltungen, Gästekarte, Karte und Empfehlungen neu gestaltet
+- Installationsbutton browserübergreifend korrigiert
+- PWA-Theme, Icons und Cache aktualisiert
+- deutsche, englische und niederländische Version erhalten

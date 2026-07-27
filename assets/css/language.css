@@ -2,16 +2,22 @@
 :root{--gold:#b99052}
 *{box-sizing:border-box}
 body{
-  margin:0;min-height:100svh;display:grid;place-items:center;text-align:center;color:#fff;font-family:Inter,system-ui,sans-serif;
-  background:radial-gradient(circle at 80% 18%,rgba(185,144,82,.24),transparent 24%),linear-gradient(135deg,#050505,#1b1814)
+  margin:0;min-height:100svh;display:grid;place-items:center;text-align:center;color:#fff;
+  font-family:Inter,system-ui,sans-serif;
+  background:
+    radial-gradient(circle at 50% 18%,rgba(185,144,82,.18),transparent 24%),
+    linear-gradient(180deg,#050505 0%,#080808 58%,#11100f 100%);
 }
-.wrap{width:min(720px,calc(100% - 30px));padding:42px}
-.logo{width:min(520px,88vw);margin:0 auto 30px}
-p{color:rgba(255,255,255,.7);font-size:1.03rem;margin-bottom:24px}
+.wrap{width:min(760px,calc(100% - 28px));padding:46px}
+.logo{
+  width:min(590px,90vw)!important;height:auto!important;margin:0 auto 31px!important;
+  background:transparent!important;border:0!important;box-shadow:none!important;filter:none!important
+}
+p{color:rgba(255,255,255,.70);font-size:1.03rem;margin-bottom:24px}
 .links{display:flex;gap:11px;justify-content:center;flex-wrap:wrap}
 .links a{
-  min-width:135px;min-height:50px;display:grid;place-items:center;padding:12px 20px;border-radius:999px;
-  color:#050505;background:var(--gold);text-decoration:none;font-weight:900;transition:.2s ease
+  min-width:135px;min-height:50px;display:grid;place-items:center;padding:12px 20px;
+  border-radius:999px;color:#050505;background:var(--gold);text-decoration:none;font-weight:900;transition:.2s ease
 }
 .links a:hover{transform:translateY(-2px);filter:brightness(1.07)}
 :focus-visible{outline:3px solid #fff;outline-offset:4px}
