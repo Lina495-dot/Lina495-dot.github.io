@@ -1,5 +1,5 @@
 
-const CACHE="me-living-guide-v6-5-login-connected";
+const CACHE="me-living-guide-v6-5-1-international-postcodes";
 const CORE=[
   "/private/dashboard-nl.html",
   "/private/dashboard-en.html",

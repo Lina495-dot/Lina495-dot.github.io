@@ -9,21 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const copy = {
     de:{
       required:"Bitte füllen Sie beide Felder aus.",
-      postal:"Bitte geben Sie eine gültige fünfstellige Postleitzahl ein.",
+      postal:"Bitte geben Sie eine gültige Postleitzahl ein.",
       invalid:"Die eingegebenen Daten konnten keiner aktuellen Buchung zugeordnet werden.",
       unavailable:"Der Gastbereich ist momentan nicht erreichbar. Bitte versuchen Sie es später erneut.",
       loading:"Buchung wird geprüft …"
     },
     en:{
       required:"Please complete both fields.",
-      postal:"Please enter a valid five-digit postal code.",
+      postal:"Please enter a valid postal code.",
       invalid:"The details could not be matched to a current booking.",
       unavailable:"The guest area is currently unavailable. Please try again later.",
       loading:"Checking your booking …"
     },
     nl:{
       required:"Vul beide velden in.",
-      postal:"Vul een geldige postcode van vijf cijfers in.",
+      postal:"Vul een geldige postcode in.",
       invalid:"De ingevoerde gegevens konden niet aan een actuele boeking worden gekoppeld.",
       unavailable:"Het gastgedeelte is momenteel niet bereikbaar. Probeer het later opnieuw.",
       loading:"Uw boeking wordt gecontroleerd …"
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     postalCode.setAttribute("aria-invalid","false");
 
     const nameValue = surname.value.trim();
-    const postalValue = postalCode.value.replace(/\s/g,"").trim();
+    const postalValue = postalCode.value.trim().replace(/\s+/g," ").toUpperCase();
 
     if (!nameValue || !postalValue) {
       message.textContent = t.required;
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (!/^\d{5}$/.test(postalValue)) {
+    if (!/^[A-Z0-9][A-Z0-9 -]{1,10}[A-Z0-9]$/.test(postalValue)) {
       postalCode.setAttribute("aria-invalid","true");
       message.textContent = t.postal;
       return;

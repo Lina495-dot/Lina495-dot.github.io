@@ -203,3 +203,11 @@ Noch erforderlich:
 - ungültige Buchungsdaten und Serverfehler erhalten verständliche Meldungen
 - Deutsch, Englisch und Niederländisch
 - noch keine privaten WLAN- oder Zugangsdaten im statischen GitHub-Code
+
+
+## Version 6.5.1 – internationale Postleitzahlen
+
+- vierstellige Schweizer und österreichische PLZ werden akzeptiert
+- internationale Postleitzahlen mit Buchstaben, Leerzeichen oder Bindestrich sind möglich
+- die Eingabe ist nicht mehr auf fünf Ziffern begrenzt
+- maximale Eingabelänge: 12 Zeichen
