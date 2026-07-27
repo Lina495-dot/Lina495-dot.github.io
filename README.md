@@ -173,3 +173,12 @@ Noch erforderlich:
 - Unterstreichung vollständig entfernt
 - Abstände und vertikale Ausrichtung verbessert
 - Übersetzungen: „My stay“ und „Mijn verblijf“
+
+
+## Version 6.2.2 – Kontaktbuttons
+
+- offizielles WhatsApp-Symbol als SVG
+- Telefonhörer für Anrufen
+- Standort-Pin für Navigation
+- Warnsymbol für den Notruf
+- einheitliche pillenförmige Buttons im ME-LIVING-Design

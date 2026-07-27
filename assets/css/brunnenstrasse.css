@@ -227,3 +227,29 @@ a.private-button:focus,
 a.private-button:visited{
   text-decoration:none !important;
 }
+
+
+/* Version 6.2.2 – Kontaktbuttons mit einheitlichen SVG-Icons */
+.help-card{display:flex;flex-direction:column}
+.help-card p{margin-bottom:18px}
+.contact-action{
+  min-height:46px;margin-top:auto;padding:0 15px;
+  display:inline-flex!important;align-items:center;justify-content:center;gap:9px;
+  border-radius:999px;text-decoration:none!important;
+  font-size:.84rem;font-weight:850;line-height:1;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease
+}
+.contact-action:hover{transform:translateY(-1px)}
+.contact-icon{width:19px;height:19px;flex:0 0 19px;display:block}
+.contact-action.phone,.contact-action.navigation{
+  color:#fff;background:var(--black);border:1px solid rgba(185,144,82,.25)
+}
+.contact-action.phone .contact-icon,.contact-action.navigation .contact-icon{color:var(--gold-light)}
+.contact-action.whatsapp{
+  color:#fff;background:var(--black);border:1px solid rgba(37,211,102,.45)
+}
+.contact-action.whatsapp .contact-icon{color:#25d366}
+.contact-action.whatsapp:hover{background:rgba(37,211,102,.11);border-color:#25d366}
+.contact-action.emergency{
+  color:#fff;background:#7a1e1e;border:1px solid rgba(255,255,255,.12)
+}
