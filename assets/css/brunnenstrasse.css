@@ -253,3 +253,8 @@ a.private-button:visited{
 .contact-action.emergency{
   color:#fff;background:#7a1e1e;border:1px solid rgba(255,255,255,.12)
 }
+
+.contact-action.email{
+ color:#fff;background:var(--black);border:1px solid rgba(185,144,82,.25)
+}
+.contact-action.email .contact-icon{color:var(--gold-light)}
