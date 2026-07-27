@@ -148,3 +148,19 @@ Der Button „Zum Startbildschirm hinzufügen“ funktioniert jetzt browserüber
 - Parken am Rathaus und Rauchstraße
 - zwei große Balkone, Innenstadtlage und Waschmaschine
 - Brunnenstraße ist auf der zentralen Startseite aktiviert
+
+
+## ME LIVING Guide 6.2 – Mein Aufenthalt
+
+Umgesetzt:
+- eigene Login-Seite „Mein Aufenthalt“
+- Nachname und fünfstellige Postleitzahl
+- Deutsch, Englisch und Niederländisch
+- alle privaten Buttons der Brunnenstraße führen zur Login-Seite
+- vorbereitetes Dashboard für WLAN, Unterkunft, Geräte, Waschmaschine, Müll und Abreise
+- keine Buchungs-, WLAN- oder Zugangsdaten in öffentlichen Dateien
+- vorbereiteter sicherer Endpunkt `/api/guest-access`
+
+Noch erforderlich:
+- geschützte serverseitige Datenquelle bzw. Buchungssystem-Anbindung
+- ohne diese Anbindung zeigt die Maske bewusst keinen privaten Inhalt und täuscht keine Anmeldung vor

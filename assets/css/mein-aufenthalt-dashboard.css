@@ -1,0 +1,14 @@
+
+@import url("./mein-aufenthalt.css");
+.dashboard-main{width:min(1060px,calc(100% - 28px));margin:auto;padding:34px 0 70px}
+.dashboard-card{padding:32px;border-radius:30px;background:linear-gradient(180deg,#fff,#faf7f0);border:1px solid rgba(185,144,82,.28);box-shadow:var(--shadow)}
+.dashboard-card h1{text-align:left}
+.dashboard-card .intro{text-align:left;margin-left:0}
+.dashboard-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:27px}
+.dashboard-item{min-height:160px;padding:21px;border-radius:21px;background:#fff;border:1px solid var(--line)}
+.dashboard-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(185,144,82,.14);font-size:1.3rem}
+.dashboard-item h2{margin-top:13px;color:var(--black);font-size:1.05rem}
+.dashboard-item p{margin-top:5px;color:var(--muted);font-size:.85rem}
+.locked-note{margin-top:22px;padding:17px;border-radius:16px;color:#fff;background:linear-gradient(135deg,#050505,#1a1713);border-left:3px solid var(--gold)}
+@media(max-width:780px){.dashboard-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.dashboard-grid{grid-template-columns:1fr}.dashboard-card{padding:25px 19px}}

@@ -1,0 +1,168 @@
+
+:root{
+  --black:#050505;
+  --black-soft:#17140f;
+  --gold:#b99052;
+  --gold-light:#d8bd88;
+  --ivory:#faf8f3;
+  --paper:#fff;
+  --ink:#1e1d1b;
+  --muted:#716d66;
+  --line:rgba(5,5,5,.1);
+  --danger:#9f2f2f;
+  --shadow:0 28px 80px rgba(0,0,0,.24);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{min-height:100%}
+body{
+  min-height:100vh;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 50% 13%,rgba(185,144,82,.19),transparent 25%),
+    linear-gradient(180deg,#050505 0%,#090908 58%,#17140f 100%);
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+button,input{font:inherit}
+.private-page{min-height:100vh;display:grid;grid-template-rows:auto 1fr auto}
+.private-header{
+  min-height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  width:min(1160px,calc(100% - 34px));
+  margin:auto;
+}
+.private-logo{width:185px;height:auto}
+.back-link{
+  min-height:42px;
+  padding:0 14px;
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  text-decoration:none;
+  color:rgba(255,255,255,.78);
+  border:1px solid rgba(185,144,82,.22);
+  background:rgba(255,255,255,.035);
+  font-size:.82rem;
+  font-weight:850;
+}
+.private-main{
+  width:min(560px,calc(100% - 28px));
+  margin:auto;
+  padding:40px 0 70px;
+}
+.login-card{
+  padding:38px;
+  border-radius:31px;
+  background:linear-gradient(180deg,#fff,#faf7f0);
+  border:1px solid rgba(185,144,82,.28);
+  box-shadow:var(--shadow);
+}
+.lock-icon{
+  width:66px;height:66px;margin:0 auto 21px;border-radius:21px;
+  display:grid;place-items:center;
+  color:var(--gold-light);background:#050505;
+  border:1px solid rgba(185,144,82,.25);
+  font-size:1.55rem;
+}
+.eyebrow{
+  color:var(--gold);
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-size:.74rem;
+  font-weight:900;
+}
+h1{
+  margin-top:7px;
+  text-align:center;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(2.9rem,7vw,4.4rem);
+  line-height:.96;
+  font-weight:500;
+  letter-spacing:-.04em;
+  color:var(--black);
+}
+.intro{
+  max-width:440px;
+  margin:16px auto 0;
+  color:var(--muted);
+  text-align:center;
+  line-height:1.7;
+}
+.login-form{display:grid;gap:17px;margin-top:29px}
+.field{display:grid;gap:7px}
+.field label{color:var(--black);font-size:.85rem;font-weight:850}
+.field input{
+  width:100%;
+  min-height:54px;
+  padding:0 16px;
+  border-radius:16px;
+  border:1px solid rgba(5,5,5,.14);
+  background:#fff;
+  color:var(--black);
+  outline:none;
+  transition:.2s ease;
+}
+.field input:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 4px rgba(185,144,82,.13);
+}
+.field input[aria-invalid="true"]{border-color:var(--danger)}
+.submit-button{
+  min-height:54px;
+  margin-top:4px;
+  border:0;
+  border-radius:999px;
+  background:var(--gold);
+  color:var(--black);
+  font-weight:900;
+  cursor:pointer;
+}
+.submit-button:disabled{opacity:.6;cursor:wait}
+.form-message{
+  min-height:23px;
+  color:var(--danger);
+  text-align:center;
+  font-size:.84rem;
+  line-height:1.5;
+}
+.privacy-note{
+  margin-top:20px;
+  padding:14px;
+  border-radius:15px;
+  background:rgba(5,5,5,.045);
+  color:var(--muted);
+  font-size:.76rem;
+  line-height:1.55;
+  text-align:center;
+}
+.setup-note{
+  margin-top:17px;
+  padding:15px;
+  border-radius:15px;
+  color:#fff;
+  background:linear-gradient(135deg,#050505,#1a1713);
+  border-left:3px solid var(--gold);
+  font-size:.79rem;
+  line-height:1.55;
+}
+.private-footer{
+  padding:29px 18px;
+  color:rgba(255,255,255,.42);
+  text-align:center;
+  font-size:.78rem;
+}
+.private-footer img{width:min(230px,65vw);margin:0 auto 13px}
+
+@media(max-width:620px){
+  .private-header{min-height:70px}
+  .private-logo{width:145px}
+  .back-link{font-size:0;width:43px;padding:0;justify-content:center}
+  .back-link::after{content:"←";font-size:1rem}
+  .private-main{padding:25px 0 55px}
+  .login-card{padding:27px 20px;border-radius:25px}
+}

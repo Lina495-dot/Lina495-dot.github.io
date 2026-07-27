@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mein Aufenthalt | ME LIVING Guide</title>
+<script>
+const stored=localStorage.getItem("me-living-language");
+const browser=(navigator.language||"de").toLowerCase();
+const lang=stored||(/^nl/.test(browser)?"nl":/^en/.test(browser)?"en":"de");
+window.location.replace("mein-aufenthalt-"+lang+".html");
+</script>
+</head>
+<body><a href="mein-aufenthalt-de.html">Mein Aufenthalt</a></body>
+</html>

@@ -1,6 +1,12 @@
 
-const CACHE="me-living-guide-v6-1-brunnenstrasse";
+const CACHE="me-living-guide-v6-2-private-login";
 const CORE=[
+  "/private/mein-aufenthalt-nl.html",
+  "/private/mein-aufenthalt-en.html",
+  "/private/mein-aufenthalt-de.html",
+  "/private/index.html",
+  "/assets/js/mein-aufenthalt.js",
+  "/assets/css/mein-aufenthalt.css",
   "/nl/brunnenstrasse.html",
   "/en/brunnenstrasse.html",
   "/de/brunnenstrasse.html",
