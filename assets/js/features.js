@@ -68,9 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const copyMap = {
-    de:{route:"Route",show:"Auf Karte zeigen",fullscreen:"Karte groß öffnen"},
-    en:{route:"Route",show:"Show on map",fullscreen:"Open large map"},
-    nl:{route:"Route",show:"Op kaart tonen",fullscreen:"Kaart groot openen"}
+    de:{route:"Route",show:"Auf Karte zeigen",fullscreen:"Karte groß öffnen",expand:"Orte in der Nähe anzeigen",collapse:"Orte ausblenden"},
+    en:{route:"Route",show:"Show on map",fullscreen:"Open large map",expand:"Show nearby places",collapse:"Hide places"},
+    nl:{route:"Route",show:"Op kaart tonen",fullscreen:"Kaart groot openen",expand:"Plaatsen in de buurt tonen",collapse:"Plaatsen verbergen"}
   };
   const mt = copyMap[lang] || copyMap.de;
 
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
         item.innerHTML =
           "<div class='map-place-content'>" +
           "<span class='map-place-category'>" + (categoryLabels[place.category] || "") + "</span>" +
-          "<strong>" + place.name + "</strong><small>" + place.address + "</small></div>" +
+          "<strong>" + place.name + "</strong></div>" +
           "<div class='map-place-actions'>" +
           "<button type='button'>" + mt.show + "</button>" +
           "<a target='_blank' rel='noopener' href='" + googleLink(place) + "'>" + mt.route + "</a></div>";
@@ -145,6 +145,23 @@ document.addEventListener("DOMContentLoaded", () => {
         listEl.appendChild(item);
       });
   };
+
+  let mapListToggle = null;
+  if (listEl) {
+    mapListToggle = document.createElement("button");
+    mapListToggle.type = "button";
+    mapListToggle.className = "map-list-toggle";
+    mapListToggle.textContent = mt.expand;
+    mapListToggle.setAttribute("aria-expanded", "false");
+    listEl.parentNode.insertBefore(mapListToggle, listEl);
+
+    mapListToggle.addEventListener("click", () => {
+      const expanded = mapListToggle.getAttribute("aria-expanded") === "true";
+      mapListToggle.setAttribute("aria-expanded", String(!expanded));
+      mapListToggle.textContent = expanded ? mt.expand : mt.collapse;
+      listEl.classList.toggle("mobile-expanded", !expanded);
+    });
+  }
 
   if (mapToolbar) {
     mapToolbar.querySelectorAll("[data-map-filter]").forEach(button => {

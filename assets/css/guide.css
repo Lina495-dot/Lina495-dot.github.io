@@ -469,3 +469,9 @@ footer{background:#050505;color:rgba(255,255,255,.46);padding:40px 18px;text-ali
 .map-fallback{display:none!important}
 @media(max-width:760px){#guest-map{height:430px}.map-list-v51{grid-template-columns:1fr}.map-overlay-controls{align-items:flex-start;flex-direction:column}.map-fullscreen-link{width:100%;justify-content:center}}
 @media(max-width:520px){.map-place-card{align-items:flex-start;flex-direction:column}.map-place-actions{width:100%}.map-place-actions button,.map-place-actions a{flex:1}}
+
+/* Version 5.1.1 – kompakte Karten-Ortsliste */
+.map-place-content small{display:none!important}
+.map-place-card{min-height:82px}
+.map-list-toggle{display:none;width:100%;min-height:46px;margin-top:15px;padding:0 16px;border-radius:999px;border:1px solid rgba(5,5,5,.14);background:#fff;color:var(--black);font-weight:850;cursor:pointer}
+@media(max-width:760px){.map-list-toggle{display:flex;align-items:center;justify-content:center}.map-list-v51{display:none!important}.map-list-v51.mobile-expanded{display:grid!important}}
