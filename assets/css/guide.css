@@ -95,17 +95,13 @@ section{padding:108px 0}
   border-radius:50%;right:-180px;bottom:-185px;
 }
 .hero-content{
-  position:relative;z-index:2;padding:168px 0 105px;
-  display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);
-  align-items:center;gap:72px;max-width:none!important;
+  position:relative;z-index:2;padding:150px 0 120px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:28px;max-width:980px!important;margin:0 auto;
 }
-.hero-copy{max-width:780px}
-.hero-brand-panel{
-  min-height:370px;border-radius:34px;padding:46px;display:grid;place-items:center;
-  background:rgba(255,255,255,.035);border:1px solid rgba(185,144,82,.2);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 24px 70px rgba(0,0,0,.25);
-}
-.hero-brand-panel img{width:min(420px,100%);height:auto}
+.hero-copy{max-width:820px;display:flex;flex-direction:column;align-items:center}
+.hero-brand-panel{background:none;border:none;box-shadow:none;min-height:auto;padding:0;display:grid;place-items:center;margin-top:10px}
+.hero-brand-panel img{width:min(520px,92vw);height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));}
 .kicker{
   display:inline-flex;padding:8px 14px;border-radius:999px;
   border:1px solid rgba(185,144,82,.32);background:rgba(255,255,255,.055);
@@ -117,7 +113,7 @@ section{padding:108px 0}
   margin:31px 0 24px;
 }
 .hero .welcome-line{
-  display:block;color:var(--gold-light);font-size:1rem;font-weight:850;
+  display:block;color:#f7f2e8;font-size:1.08rem;font-weight:850;
   text-transform:uppercase;letter-spacing:.075em;margin-bottom:10px;
 }
 .hero .intro-text{color:rgba(255,255,255,.78);font-size:clamp(1.05rem,2vw,1.25rem);max-width:720px}
