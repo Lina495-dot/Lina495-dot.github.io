@@ -1,5 +1,5 @@
 
-const CACHE="me-living-guide-v6-2-2-contact-icons";
+const CACHE="me-living-guide-v6-3-1-stay-section";
 const CORE=[
   "/private/mein-aufenthalt-nl.html",
   "/private/mein-aufenthalt-en.html",

@@ -267,3 +267,92 @@ a.private-button:visited{
 .stay-card:hover{transform:translateY(-4px)}
 .stay-card h3{margin:0 0 10px}
 .stay-card span{display:block;margin-top:18px;font-weight:700;color:#b99052}
+
+
+/* Version 6.3.1 – alter Highlight-Block vollständig entfernt */
+.stay-section-head{
+  margin-bottom:28px;
+}
+.stay-action-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+.stay-action-card{
+  min-height:255px;
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  border-radius:27px;
+  text-decoration:none !important;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-soft);
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.stay-action-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(185,144,82,.42);
+  box-shadow:var(--shadow);
+}
+.stay-private-card{
+  color:#fff;
+  background:
+    radial-gradient(circle at 88% 14%,rgba(185,144,82,.23),transparent 24%),
+    linear-gradient(140deg,#050505,#1a1713);
+  border-color:rgba(185,144,82,.2);
+}
+.stay-discover-card{
+  color:var(--ink);
+  background:linear-gradient(180deg,#fff,#fbf8f2);
+}
+.stay-action-icon{
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  margin-bottom:24px;
+}
+.stay-action-icon svg{
+  width:28px;
+  height:28px;
+}
+.stay-private-card .stay-action-icon{
+  color:var(--gold-light);
+  background:rgba(185,144,82,.11);
+  border:1px solid rgba(185,144,82,.22);
+}
+.stay-discover-card .stay-action-icon{
+  color:var(--gold);
+  background:rgba(185,144,82,.13);
+  border:1px solid rgba(185,144,82,.18);
+}
+.stay-action-content{
+  display:flex;
+  flex:1;
+  flex-direction:column;
+}
+.stay-action-content h3{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.9rem;
+  line-height:1;
+  margin-bottom:12px;
+}
+.stay-private-card h3{color:#fff}
+.stay-discover-card h3{color:var(--black)}
+.stay-action-content p{
+  line-height:1.65;
+}
+.stay-private-card p{color:rgba(255,255,255,.65)}
+.stay-discover-card p{color:var(--muted)}
+.stay-action-content span{
+  margin-top:auto;
+  padding-top:24px;
+  font-weight:850;
+}
+.stay-private-card span{color:var(--gold-light)}
+.stay-discover-card span{color:var(--gold)}
+@media(max-width:760px){
+  .stay-action-grid{grid-template-columns:1fr}
+  .stay-action-card{min-height:225px;padding:25px}
+}

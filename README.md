@@ -182,3 +182,13 @@ Noch erforderlich:
 - Standort-Pin für Navigation
 - Warnsymbol für den Notruf
 - einheitliche pillenförmige Buttons im ME-LIVING-Design
+
+
+## Version 6.3.1 – Kacheln vollständig entfernt
+
+- der gesamte alte Highlight-Block wurde aus dem HTML gelöscht
+- keine leeren Symbolkacheln und keine alten Abstände mehr
+- ersetzt durch genau zwei große Aktionskarten:
+  - Mein Aufenthalt
+  - Umgebung entdecken
+- Deutsch, Englisch und Niederländisch angepasst
