@@ -164,3 +164,12 @@ Umgesetzt:
 Noch erforderlich:
 - geschützte serverseitige Datenquelle bzw. Buchungssystem-Anbindung
 - ohne diese Anbindung zeigt die Maske bewusst keinen privaten Inhalt und täuscht keine Anmeldung vor
+
+
+## Version 6.2.1 – Header-Button korrigiert
+
+- „Privater Gastbereich“ im Header wurde zu „Mein Aufenthalt“
+- Schloss als sauber zentriertes SVG statt Emoji
+- Unterstreichung vollständig entfernt
+- Abstände und vertikale Ausrichtung verbessert
+- Übersetzungen: „My stay“ und „Mijn verblijf“

@@ -48,8 +48,39 @@ h2{font-size:clamp(2.8rem,5vw,4.9rem);line-height:.98}
 .lang a{width:36px;height:32px;display:grid;place-items:center;border-radius:999px;color:rgba(255,255,255,.68);text-decoration:none;font-size:.75rem;font-weight:900}
 .lang a.active{background:var(--gold);color:var(--black)}
 .private-button{
-  min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(185,144,82,.28);
-  background:rgba(185,144,82,.08);color:#fff;font-weight:850;cursor:pointer
+  min-height:42px;
+  padding:0 16px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border-radius:999px;
+  border:1px solid rgba(185,144,82,.34);
+  background:rgba(185,144,82,.08);
+  color:#fff;
+  text-decoration:none;
+  white-space:nowrap;
+  font-size:.82rem;
+  font-weight:850;
+  line-height:1;
+  cursor:pointer;
+  transition:background .2s ease,border-color .2s ease,transform .2s ease;
+}
+.private-button:hover{
+  background:rgba(185,144,82,.15);
+  border-color:rgba(185,144,82,.55);
+  transform:translateY(-1px);
+}
+.private-button::before{
+  content:"";
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  display:block;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23d8bd88' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='14' height='11' x='5' y='11' rx='2' ry='2'/%3E%3Cpath d='M8 11V7a4 4 0 0 1 8 0v4'/%3E%3C/svg%3E");
 }
 .menu-btn{display:none;border:0;background:none;color:#fff;font-size:1.55rem;cursor:pointer}
 
@@ -186,4 +217,13 @@ footer img{width:min(290px,72vw);margin:0 auto 18px}
   .highlight-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
   .map-frame{height:390px}
   .hero-actions .btn{width:100%}
+}
+
+
+/* Header button refinement */
+a.private-button,
+a.private-button:hover,
+a.private-button:focus,
+a.private-button:visited{
+  text-decoration:none !important;
 }
